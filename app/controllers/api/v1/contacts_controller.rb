@@ -1,20 +1,20 @@
 module Api
   module V1
     class ContactsController < ApplicationController
+      before_action :authenticate_api_user!
       before_action :set_contact, only: %i[show update destroy]
 
       def index
-        @contacts = Contact.all
+        @contacts = current_api_user.contacts
       end
 
-      def show
-      end
+      def show; end
 
       def create
-        @contact = Contact.new(contact_params)
+        @contact = current_api_user.contacts.new(contact_params)
 
         if @contact.save
-          render :show, status: :created, location: @contact
+          render :show, status: :created, location: api_contacts_path(@contact)
         else
           render json: @contact.errors, status: :unprocessable_entity
         end
@@ -22,7 +22,7 @@ module Api
 
       def update
         if @contact.update(contact_params)
-          render :show, status: :ok, location: @contact
+          render :show, status: :ok, location: api_contact_path(@contact)
         else
           render json: @contact.errors, status: :unprocessable_entity
         end
@@ -35,7 +35,7 @@ module Api
       private
 
       def set_contact
-        @contact = Contact.find(params[:id])
+        @contact = current_api_user.contacts.find(params[:id])
       end
 
       def contact_params
