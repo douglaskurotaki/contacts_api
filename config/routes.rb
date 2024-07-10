@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'api_constraints'
 
 Rails.application.routes.draw do
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
 
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       resources :contacts
+      resources :addresses, only: :show
     end
   end
 end
