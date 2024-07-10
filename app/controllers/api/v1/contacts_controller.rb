@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class ContactsController < ApplicationController
@@ -39,7 +41,17 @@ module Api
       end
 
       def contact_params
-        params.require(:contact).permit(:user_id, :name, :cpf, :phone, :address, :latitude, :longitude)
+        params.require(:contact).permit(:user_id, :name, :cpf, :phone,
+                                        address_attributes: %i[
+                                          street
+                                          city
+                                          uf
+                                          city
+                                          zipcode
+                                          number
+                                          complement
+                                          neighborhood
+                                        ])
       end
     end
   end
