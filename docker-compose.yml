@@ -28,7 +28,7 @@ services:
       - GMAIL_USERNAME=${GMAIL_USERNAME}
       - GMAIL_PASSWORD=${GMAIL_PASSWORD}
     volumes:
-      - app_storage:/rails/storage
+      - .:/rails
     depends_on:
       - db
     ports:
