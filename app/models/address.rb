@@ -5,7 +5,7 @@ class Address < ApplicationRecord
 
   validates :city, :street, :number, :zipcode, :uf, :latitude, :longitude, presence: true
 
-  before_save :set_geolocation
+  before_validation :set_geolocation
 
   def set_geolocation
     return unless zipcode_changed?
