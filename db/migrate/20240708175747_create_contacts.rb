@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateContacts < ActiveRecord::Migration[7.1]
   def change
     create_table :contacts do |t|
@@ -5,9 +7,6 @@ class CreateContacts < ActiveRecord::Migration[7.1]
       t.string :name, null: false
       t.string :cpf
       t.string :phone, null: false
-      t.string :address, null: false
-      t.float :latitude, null: false
-      t.float :longitude, null: false
 
       t.timestamps
     end
