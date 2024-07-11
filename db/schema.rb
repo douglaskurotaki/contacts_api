@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_005425) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_11_071047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "addresses", force: :cascade do |t|
     t.bigint "contact_id", null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_005425) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cpf"], name: "index_contacts_on_cpf", unique: true
+    t.index ["name"], name: "index_contacts_on_name"
     t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 

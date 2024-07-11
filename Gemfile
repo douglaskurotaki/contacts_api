@@ -40,6 +40,8 @@ gem 'faraday'
 gem 'rswag-api'
 gem 'rswag-ui'
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'database_cleaner-active_record'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

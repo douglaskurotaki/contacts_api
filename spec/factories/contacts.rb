@@ -9,4 +9,10 @@ FactoryBot.define do
     created_at { Time.zone.now }
     updated_at { Time.zone.now }
   end
+
+  trait :with_address do
+    after(:build) do |contact|
+      contact.address = build(:address, contact:)
+    end
+  end
 end
