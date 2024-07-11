@@ -1,70 +1,55 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-
 ruby '3.3.1'
-
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
-
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
-
-# Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '>= 5.0'
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+# Speeds up boot times through caching
+gem 'bootsnap', require: false
+# Validates and generates CPFs and CNPJs
+gem 'cpf_cnpj'
+# Token authentication for Rails API
+gem 'devise_token_auth'
+# Executes HTTP requests
+gem 'faraday'
+# Builds JSON APIs
 gem 'jbuilder'
-
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# Pagination for Rails
+gem 'kaminari'
+# PostgreSQL adapter for Rails
+gem 'pg', '~> 1.1'
+# HTTP server for Ruby/Rails
+gem 'puma', '>= 5.0'
+# Web application framework
+gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+# Swagger generators for RSpec
+gem 'rswag-api'
+# Swagger UI engine for API documentation
+gem 'rswag-ui'
+# Timezone data for Windows/JRuby
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', require: false
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
-
-gem 'cpf_cnpj'
-
-gem 'devise_token_auth'
-
-gem 'faraday'
-
-gem 'rswag-api'
-gem 'rswag-ui'
-
-gem 'kaminari'
-
 group :development, :test do
+  # Maintains clean DB state for testing
   gem 'database_cleaner-active_record'
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # Debugging tool for Ruby
   gem 'debug', platforms: %i[mri windows]
+  # Simplifies test object creation
   gem 'factory_bot_rails'
   # Generates fake data
   gem 'faker'
-  # Pry is a runtime developer console and IRB
-  gem 'pry-byebug'
-  # Test
-  gem 'rspec-rails', '~> 6.0'
-  # Swagger-based DSL for describing and testing API operations
-  gem 'rswag-specs'
-  gem 'shoulda-matchers'
-
-  gem 'simplecov'
-  gem 'simplecov_json_formatter'
-
-  gem 'webmock'
-end
-
-group :development do
+  # Opens sent emails in the browser window
   gem 'letter_opener'
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  # Combines pry with byebug for debugging
+  gem 'pry-byebug'
+  # Testing framework for Rails
+  gem 'rspec-rails', '~> 6.0'
+  # Swagger-based DSL for testing API operations
+  gem 'rswag-specs'
+  # Provides RSpec- and Minitest-compatible one-liners to test common Rails functionalities
+  gem 'shoulda-matchers'
+  # Code coverage analysis tool for Ruby
+  gem 'simplecov'
+  # JSON formatter for SimpleCov output
+  gem 'simplecov_json_formatter'
+  # Stubs and sets expectations on HTTP requests
+  gem 'webmock'
 end
