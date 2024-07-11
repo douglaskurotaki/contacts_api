@@ -40,6 +40,7 @@ SimpleCov.start do
   add_group 'Controllers', 'app/controllers'
   add_group 'Libs', 'lib'
   add_group 'Adapters', 'app/adapters'
+  add_group 'Gateways', 'app/gateways'
   add_group 'Models', 'app/models'
   add_group 'Specs', 'spec'
 end

@@ -1,0 +1,94 @@
+{
+	"results": [
+		{
+			"address_components": [
+				{
+					"long_name": "01001-000",
+					"short_name": "01001-000",
+					"types": [
+						"postal_code"
+					]
+				},
+				{
+					"long_name": "Praça da Sé",
+					"short_name": "Praça da Sé",
+					"types": [
+						"route"
+					]
+				},
+				{
+					"long_name": "Sé",
+					"short_name": "Sé",
+					"types": [
+						"political",
+						"sublocality",
+						"sublocality_level_1"
+					]
+				},
+				{
+					"long_name": "São Paulo",
+					"short_name": "São Paulo",
+					"types": [
+						"administrative_area_level_2",
+						"political"
+					]
+				},
+				{
+					"long_name": "São Paulo",
+					"short_name": "SP",
+					"types": [
+						"administrative_area_level_1",
+						"political"
+					]
+				},
+				{
+					"long_name": "Brazil",
+					"short_name": "BR",
+					"types": [
+						"country",
+						"political"
+					]
+				}
+			],
+			"formatted_address": "Praça da Sé - Sé, São Paulo - SP, 01001-000, Brazil",
+			"geometry": {
+				"bounds": {
+					"northeast": {
+						"lat": -23.5477268,
+						"lng": -46.6319211
+					},
+					"southwest": {
+						"lat": -23.5529094,
+						"lng": -46.63554
+					}
+				},
+				"location": {
+					"lat": -23.5502909,
+					"lng": -46.6341887
+				},
+				"location_type": "APPROXIMATE",
+				"viewport": {
+					"northeast": {
+						"lat": -23.5477268,
+						"lng": -46.6319211
+					},
+					"southwest": {
+						"lat": -23.5529094,
+						"lng": -46.63554
+					}
+				}
+			},
+			"place_id": "ChIJK4pX_qpZzpQRfVxEkvo8C38",
+			"postcode_localities": [
+				"Centro Histórico de São Paulo",
+				"Liberdade",
+				"Subprefecture of Mooca",
+				"Sé"
+			],
+			"types": [
+				"postal_code"
+			]
+		}
+	],
+	"status": "OK"
+}
