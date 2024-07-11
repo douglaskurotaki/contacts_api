@@ -5,7 +5,8 @@ class Contact < ApplicationRecord
   has_one :address
   accepts_nested_attributes_for :address
 
-  validates :name, :cpf, :phone, presence: true
+  validates :name, :phone, presence: true
+  validates :cpf, presence: true, uniqueness: { case_sensitive: false }
 
   before_validation :validate_cpf, :validate_phone
 
