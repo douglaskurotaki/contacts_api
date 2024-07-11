@@ -7,7 +7,13 @@ module Api
       before_action :set_contact, only: %i[show update destroy]
 
       def index
-        @contacts = current_api_user.contacts
+        @contacts = ContactRepository.call(
+          user: current_api_user,
+          filter_value: params[:filter_value],
+          order: params[:order] || 'name',
+          page: params[:page] || 1,
+          per_page: params[:per_page] || 10
+        )
       end
 
       def show; end
