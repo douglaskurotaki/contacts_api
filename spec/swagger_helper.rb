@@ -31,7 +31,39 @@ RSpec.configure do |config|
             }
           }
         }
-      ]
+      ],
+      components: {
+        schemas: {
+          contact: {
+            properties: {
+              id: { type: :integer },
+              user_id: { type: :integer },
+              name: { type: :string },
+              cpf: { type: :string },
+              phone: { type: :string },
+              created_at: { type: :string, format: :datetime },
+              updated_at: { type: :string, format: :datetime },
+              address: {
+                type: :object,
+                properties: {
+                  id: { type: :integer },
+                  street: { type: :string },
+                  city: { type: :string },
+                  uf: { type: :string },
+                  zipcode: { type: :string },
+                  number: { type: :string },
+                  complement: { type: :string, 'x-nullable': true },
+                  neighborhood: { type: :string },
+                  latitude: { type: :number, format: :float },
+                  longitude: { type: :number, format: :float }
+                }
+              },
+              url: { type: :string }
+            },
+            required: %w[id name cpf phone address]
+          }
+        }
+      }
     }
   }
 
