@@ -16,6 +16,7 @@ Este projeto está configurado para ser executado usando Docker e Docker Compose
    git clone https://seurepositorio.com/projeto.git
    cd projeto
    ```
+
 2. **Configurar as variáveis de ambiente:**
 Crie um arquivo .env na raiz do projeto e preencha-o com as variáveis necessárias conforme o exemplo .env.example.
   ```bash
@@ -30,13 +31,16 @@ Crie um arquivo .env na raiz do projeto e preencha-o com as variáveis necessár
   GOOGLE_MAPS_HOST=url_api_maps
   GOOGLE_MAPS_KEY=sua_chave_google_maps
   ```
+
 3. **Construir e rodar o aplicativo usando Docker Compose:**
   ```bash
   docker-compose up --build
   ```
   Este comando constrói a imagem do aplicativo se necessário e inicia todos os serviços definidos no docker-compose.yml, incluindo o banco de dados e a aplicação Rails.
+
 4. **Acessar o aplicativo:**
   - O aplicativo estará disponível em http://localhost:3000.
+
 5. **Executar comandos dentro do container:**
   - Para executar comandos Rails ou Rake, você pode usar:
   ```bash
@@ -50,6 +54,7 @@ Crie um arquivo .env na raiz do projeto e preencha-o com as variáveis necessár
   ```bash
   docker-compose run contacts_api rspec
   ```
+
 6. **Encerrar os serviços:**
   ```bash
   docker-compose down
