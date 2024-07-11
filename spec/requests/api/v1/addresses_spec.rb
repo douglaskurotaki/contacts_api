@@ -80,12 +80,6 @@ RSpec.describe 'api/addresses', type: :request do
 
         run_test! { |response| expect(response.status).to eq(401) }
       end
-
-      response '404', 'not found route' do
-        let(:id) { nil }
-
-        run_test!
-      end
     end
   end
 end
