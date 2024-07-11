@@ -54,6 +54,8 @@ group :development, :test do
 
   gem 'simplecov'
   gem 'simplecov_json_formatter'
+
+  gem 'webmock'
 end
 
 group :development do
