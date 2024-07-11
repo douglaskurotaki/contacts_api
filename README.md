@@ -1,13 +1,14 @@
 # Sistema de Cadastro de Contatos
 
-## Uso do Docker
-
-Este projeto está configurado para ser executado usando Docker e Docker Compose. Isso simplifica a configuração e garante que o ambiente de todos os desenvolvedores seja consistente.
-
-### Pré-requisitos
+## Pré-requisitos
 
 - Docker
 - Docker Compose
+- Conta Google Cloud (Para acessar apis do Google Maps)
+
+## Uso do Docker
+
+Este projeto está configurado para ser executado usando Docker e Docker Compose. Isso simplifica a configuração e garante que o ambiente de todos os desenvolvedores seja consistente.
 
 ### Instruções para Uso do Docker
 
@@ -59,6 +60,9 @@ Crie um arquivo .env na raiz do projeto e preencha-o com as variáveis necessár
   ```bash
   docker-compose down
   ```
+
+## Documentação
+Está disponível a documentação referente aos endopints criados utilizando esse link http://localhost:3000/api-docs
 
 ## Bibliotecas e Gems
 
