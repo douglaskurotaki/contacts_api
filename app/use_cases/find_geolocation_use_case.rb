@@ -11,7 +11,7 @@ class FindGeolocationUseCase
   end
 
   def call
-    return nil unless address || geolocation
+    return nil if address.blank? || geolocation.blank?
 
     { latitude:, longitude: }
   end
