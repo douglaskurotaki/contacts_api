@@ -1,4 +1,7 @@
 # Sistema de Cadastro de Contatos
+Esses sistema foi feito para cadastrar contatos usando serviços externos para buscar endereços e geolocalização usando VIA CEP e a própria api do Google Maps.
+A arquitetura desse projeto foi montado em cima da Hexagonal, mas possui algumas bases da Arquitetura Limpa. Foi usado também conceitos do SOLID e Design Patterns
+Esse projeto está quase 100% de cobertura de testes, o fato de não estar 100% é por conta da falta de testes referente as funcionalidade do devise (TODO)
 
 ## Pré-requisitos
 
