@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :contacts, dependent: :destroy
+
+  validates :email, uniqueness: { case_sensitive: false }
 end
