@@ -2,8 +2,8 @@
 
 class Contact < ApplicationRecord
   belongs_to :user
-  has_one :address
-  accepts_nested_attributes_for :address
+  has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address, update_only: true
 
   validates :name, :phone, presence: true
   validates :cpf, presence: true, uniqueness: { case_sensitive: false }
