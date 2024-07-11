@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'simplecov'
 require 'simplecov_json_formatter'
+require 'webmock/rspec'
 
 ENV['RAILS_ENV'] = 'test'
 require_relative '../config/environment'
@@ -26,6 +27,8 @@ require 'rspec/rails'
 # Rails.root.glob('spec/support/**/*.rb').sort.each { |f| require f }
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::JSONFormatter,
