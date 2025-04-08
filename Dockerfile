@@ -30,12 +30,10 @@ RUN bundle install && \
 # Copy application code
 
 
-
-COPY . .
-
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
+COPY . .
 
 # Final stage for app image
 FROM base
