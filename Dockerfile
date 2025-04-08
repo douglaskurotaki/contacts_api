@@ -30,6 +30,7 @@ RUN bundle install && \
 # Copy application code
 
 
+
 COPY . .
 
 # Precompile bootsnap code for faster boot times
