@@ -28,7 +28,7 @@ RUN bundle install && \
     bundle exec bootsnap precompile --gemfile
 
 # Copy application code
-COPY . .
+
 
 COPY . .
 
