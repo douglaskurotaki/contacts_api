@@ -26,8 +26,26 @@ RSpec.describe FindGeolocationUseCase do
       allow(gateway).to receive(:by_zipcode).with(zipcode:).and_return(geolocation_data)
     end
 
+    around do |example|
+      original_cache = Rails.cache
+      Rails.cache = ActiveSupport::Cache::MemoryStore.new
+      example.run
+      Rails.cache = original_cache
+    end
+
     it 'fetches geolocation data for the given zipcode' do
       expect(call).to eq(expected_result)
+    end
+
+    context 'when the geolocation is cached' do
+      before do
+        Rails.cache.write("geolocation/#{zipcode}", expected_result)
+      end
+
+      it 'returns the cached data without calling the gateway' do
+        expect(gateway).not_to receive(:by_zipcode)
+        expect(call).to eq(expected_result)
+      end
     end
 
     context 'when the gateway raises an error' do

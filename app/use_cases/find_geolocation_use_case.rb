@@ -10,15 +10,27 @@ class FindGeolocationUseCase
     @gateway = gateway
   end
 
-  def call
-    return nil if address.blank? || geolocation.blank?
+  CACHE_EXPIRATION = 24.hours
 
-    { latitude:, longitude: }
+  def call
+    Rails.cache.fetch(cache_key, expires_in: CACHE_EXPIRATION) do
+      fetch_geolocation
+    end
   end
 
   private
 
   attr_reader :zipcode, :gateway
+
+  def cache_key
+    "geolocation/#{zipcode}"
+  end
+
+  def fetch_geolocation
+    return nil if address.blank? || geolocation.blank?
+
+    { latitude:, longitude: }
+  end
 
   def address
     @address ||= gateway.by_zipcode(zipcode:)
