@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '3.3.1'
+ruby '3.4.4'
 # Speeds up boot times through caching
 gem 'bootsnap', require: false
 # Validates and generates CPFs and CNPJs
@@ -19,7 +19,7 @@ gem 'pg', '~> 1.1'
 # HTTP server for Ruby/Rails
 gem 'puma', '>= 5.0'
 # Web application framework
-gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+gem 'rails', '~> 8.0', '>= 8.0.2'
 # Swagger generators for RSpec
 gem 'rswag-api'
 # Swagger UI engine for API documentation
